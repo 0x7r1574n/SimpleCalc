@@ -73,7 +73,7 @@ repeat {
 switch element {
     case "count":
         print("Result: \(inventory.count - 1)")
-    case "avg":
+    case "avg", "average":
         // Only if they have entered some numbers
         if inventory.count > 1 {
             var sum = convert(inventory[0])
@@ -84,11 +84,16 @@ switch element {
         } else {
             print("Missing operands.")
         }
-    case "fact":
+    case "fact", "!":
         // Has to be one number
-        if inventory.count == 2 {
-            print("Result: \(factorial(convert(inventory[0])))")
-        } else {
+        let number = convert(inventory[0])
+        if inventory.count == 2 && number <= 20 {
+            print("Result: \(factorial(number))")
+        }
+        else if number > 20 {
+            print("Number too large.")
+        }
+        else {
             print("Too many numbers.")
         }
     case "+", "-", "*", "/", "%":
