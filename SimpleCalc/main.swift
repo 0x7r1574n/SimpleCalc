@@ -24,18 +24,18 @@ func singleOperation(firstPart:Int, secondPart:Int, operation:String) {
     let result: Int?
     
     switch operation {
-    case "+":
-        result = firstPart + secondPart
-    case "-":
-        result = firstPart - secondPart
-    case "*":
-        result = firstPart * secondPart
-    case "/":
-        result = firstPart / secondPart
-    case "%":
-        result = firstPart % secondPart
-    default:
-        result = nil
+        case "+":
+            result = firstPart + secondPart
+        case "-":
+            result = firstPart - secondPart
+        case "*":
+            result = firstPart * secondPart
+        case "/":
+            result = firstPart / secondPart
+        case "%":
+            result = firstPart % secondPart
+        default:
+            result = nil
     }
     
     if result != nil {
@@ -84,7 +84,7 @@ switch element {
         } else {
             print("Missing operands.")
         }
-    case "fact", "!":
+    case "fact", "factorial", "!":
         // Has to be one number
         let number = convert(inventory[0])
         if inventory.count == 2 && number <= 20 {
@@ -96,6 +96,7 @@ switch element {
         else {
             print("Too many numbers.")
         }
+    // two-operand calculations
     case "+", "-", "*", "/", "%":
         // Saves second part of the expression
         var secondPart = input()
